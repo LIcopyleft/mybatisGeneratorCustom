@@ -11,8 +11,8 @@
 		</commentGenerator>
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/mybatis" userId="root"
-			password="123456">
+			connectionURL="jdbc:mysql://10.0.0.112:3306/drch_screen" userId="root"
+			password="root">
 		</jdbcConnection>
 		<!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
 			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl" 
@@ -27,7 +27,7 @@
 		</javaTypeResolver>
 
 		<!-- targetProject:生成PO类的位置 -->
-		<javaModelGenerator targetPackage="org.wcy.gen.model"
+		<javaModelGenerator targetPackage="com.drcnet.mc.bigdata.bmap.entity"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -35,21 +35,21 @@
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-		<sqlMapGenerator targetPackage="org.wcy.gen.mapper" 
+		<sqlMapGenerator targetPackage="com.drcnet.mc.bigdata.bmap.dao"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="org.wcy.gen.mapper" 
+			targetPackage="com.drcnet.mc.bigdata.bmap.dao"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		
 		<!-- 指定数据库表 -->
-		<table tableName="t_notification_template" schema="" enableCountByExample="false"
+		<table tableName="sys_label" domainObjectName="SysLabel" schema="" enableCountByExample="false"
 				enableDeleteByExample="false" enableUpdateByExample="false"
 				enableSelectByExample="false" selectByExampleQueryId="false"></table>
 		
